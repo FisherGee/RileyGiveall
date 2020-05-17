@@ -1,0 +1,9 @@
+giveall-message:
+  - ""
+  - "&8(&2&l!&8) &a&lYOU HAVE RECEIVED THE GIVEALL ITEM!"
+  - ""
+giver-message: "&bYou have given everyone the item in your hand!"
+sound:
+  type: LEVEL_UP
+  volume: 1
+  pitch: 10

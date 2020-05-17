@@ -1,0 +1,10 @@
+name: RileyGiveall
+version: ${project.version}
+main: me.fishergee.rileygiveall.RileyGiveall
+api-version: 1.13
+authors: [FisherGee]
+description: A plugin to give all players the item in your hand.
+commands:
+  giveall:
+    description: Give all players an item
+    usage: /giveall
