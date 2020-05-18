@@ -2,6 +2,7 @@ package me.fishergee.rileygiveall;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -36,7 +37,11 @@ public class GiveallCmd implements CommandExecutor {
         }
         if(!(sender instanceof Player)) return true;
         Player giver = (Player) sender;
-        ItemStack giveItem = new ItemStack(((Player) sender).getItemInHand());
+        ItemStack giveItem = new ItemStack(giver.getItemInHand());
+        if(giveItem.getType().equals(Material.AIR)){
+            giver.sendMessage(ChatColor.RED + "You cannot give nothing!");
+            return true;
+        }
 
         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("giver-message")));
 
