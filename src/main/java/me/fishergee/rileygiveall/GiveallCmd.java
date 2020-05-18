@@ -3,6 +3,7 @@ package me.fishergee.rileygiveall;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -52,7 +53,7 @@ public class GiveallCmd implements CommandExecutor {
             for(String line : broadcast){
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', line));
             }
-            player.playSound(player.getLocation(), config.getString("sound.type"), config.getInt("sound.volume"), config.getInt("sound.pitch"));
+            player.playSound(player.getLocation(), Sound.valueOf(config.getString("sound.type")), (float) config.getDouble("sound.volume"), (float) config.getDouble("sound.pitch"));
         }
         return true;
     }
